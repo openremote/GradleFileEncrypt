@@ -11,8 +11,8 @@ plugins {
     id("java-gradle-plugin")
     id("maven-publish")
     id("com.github.ben-manes.versions") version "0.42.0"
-    id("io.gitlab.arturbosch.detekt") version "1.20.0"
-    id("com.gradle.plugin-publish") version "1.0.0-rc-1"
+    id("io.gitlab.arturbosch.detekt") version "1.22.0"
+    id("com.gradle.plugin-publish") version "2.0.0"
 }
 
 group = "com.cherryperry.gfe"
@@ -36,18 +36,15 @@ detekt {
 }
 
 gradlePlugin {
+    website = "https://github.com/CherryPerry/GradleFileEncrypt"
+    vcsUrl = "https://github.com/CherryPerry/GradleFileEncrypt.git"
     plugins.register("gradleFileEncryptPlugin") {
         id = "com.cherryperry.gradle-file-encrypt"
         displayName = "Gradle file encrypt"
         description = "Simply encrypt your sensitive data in repository with password"
+        tags = listOf("encryption", "cryptography")
         implementationClass = "com.cherryperry.gfe.FileEncryptPlugin"
     }
-}
-
-pluginBundle {
-    website = "https://github.com/CherryPerry/GradleFileEncrypt"
-    vcsUrl = "https://github.com/CherryPerry/GradleFileEncrypt.git"
-    tags = listOf("encryption", "cryptography")
 }
 
 repositories {
@@ -59,5 +56,6 @@ dependencies {
     compileOnly(gradleApi())
     testImplementation("junit", "junit", "4.13.2")
     testImplementation(gradleTestKit())
-    detektPlugins("io.gitlab.arturbosch.detekt", "detekt-formatting", "1.20.0")
+    detektPlugins("io.gitlab.arturbosch.detekt", "detekt-formatting", "1.22.0")
+    detektPlugins("io.gitlab.arturbosch.detekt", "detekt-rules-libraries", "1.22.0")
 }
