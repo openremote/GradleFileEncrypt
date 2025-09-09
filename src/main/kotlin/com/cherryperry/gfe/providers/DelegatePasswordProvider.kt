@@ -6,5 +6,5 @@ internal class DelegatePasswordProvider(
     private val fileEncryptExtension: FileEncryptExtension,
 ) : PasswordProvider {
     override val password: CharArray?
-        get() = fileEncryptExtension.passwordProvider.forUseAtConfigurationTime().orNull?.call()
+        get() = fileEncryptExtension.passwordProvider.orNull?.call()
 }
