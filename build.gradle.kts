@@ -7,7 +7,7 @@ buildscript {
 }
 
 plugins {
-    kotlin("jvm") version "1.5.31"
+    kotlin("jvm") version "1.9.25"
     id("java-gradle-plugin")
     id("maven-publish")
     id("com.github.ben-manes.versions") version "0.42.0"
@@ -26,7 +26,7 @@ java {
 tasks.withType<KotlinCompile> {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
-        apiVersion = "1.3"
+        apiVersion = "1.9"
     }
 }
 
