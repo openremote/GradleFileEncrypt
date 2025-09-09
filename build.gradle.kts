@@ -11,7 +11,7 @@ plugins {
     id("java-gradle-plugin")
     id("maven-publish")
     id("com.github.ben-manes.versions") version "0.42.0"
-    id("io.gitlab.arturbosch.detekt") version "1.22.0"
+    id("io.gitlab.arturbosch.detekt") version "1.23.8"
     id("com.gradle.plugin-publish") version "2.0.0"
 }
 
@@ -56,6 +56,6 @@ dependencies {
     compileOnly(gradleApi())
     testImplementation("junit", "junit", "4.13.2")
     testImplementation(gradleTestKit())
-    detektPlugins("io.gitlab.arturbosch.detekt", "detekt-formatting", "1.22.0")
-    detektPlugins("io.gitlab.arturbosch.detekt", "detekt-rules-libraries", "1.22.0")
+    detektPlugins("io.gitlab.arturbosch.detekt", "detekt-formatting", "1.23.8")
+    detektPlugins("io.gitlab.arturbosch.detekt", "detekt-rules-libraries", "1.23.8")
 }
