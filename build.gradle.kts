@@ -10,7 +10,7 @@ plugins {
     kotlin("jvm") version "1.9.25"
     id("java-gradle-plugin")
     id("maven-publish")
-    id("com.github.ben-manes.versions") version "0.42.0"
+    id("com.github.ben-manes.versions") version "0.51.0"
     id("io.gitlab.arturbosch.detekt") version "1.23.8"
     id("com.gradle.plugin-publish") version "2.0.0"
 }
