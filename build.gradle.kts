@@ -15,8 +15,8 @@ plugins {
     id("com.gradle.plugin-publish") version "2.0.0"
 }
 
-group = "com.cherryperry.gfe"
-version = "2.0.3"
+group = "io.openremote.com.cherryperry.gfe"
+version = "2.1.0"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8
@@ -39,7 +39,7 @@ gradlePlugin {
     website = "https://github.com/CherryPerry/GradleFileEncrypt"
     vcsUrl = "https://github.com/CherryPerry/GradleFileEncrypt.git"
     plugins.register("gradleFileEncryptPlugin") {
-        id = "com.cherryperry.gradle-file-encrypt"
+        id = "io.openremote.com.cherryperry.gradle-file-encrypt"
         displayName = "Gradle file encrypt"
         description = "Simply encrypt your sensitive data in repository with password"
         tags = listOf("encryption", "cryptography")
