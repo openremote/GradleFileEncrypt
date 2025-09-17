@@ -24,7 +24,7 @@ class FileEncryptPluginFunctionalTest(
 ) {
 
     companion object {
-        const val EMPTY_BUILD_GRADLE = "plugins { id 'com.cherryperry.gradle-file-encrypt' }"
+        const val EMPTY_BUILD_GRADLE = "plugins { id 'io.openremote.com.cherryperry.gradle-file-encrypt' }"
         const val CONTENT_1 =
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
                 "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
