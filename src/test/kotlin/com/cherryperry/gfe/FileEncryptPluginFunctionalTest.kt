@@ -47,6 +47,22 @@ class FileEncryptPluginFunctionalTest(
             arrayOf<Any>("7.2"),
             arrayOf<Any>("7.3.3"),
             arrayOf<Any>("7.4.2"),
+            arrayOf<Any>("7.5.1"),
+            arrayOf<Any>("7.6.6"),
+            arrayOf<Any>("8.0.2"),
+            arrayOf<Any>("8.1.1"),
+            arrayOf<Any>("8.2.1"),
+            arrayOf<Any>("8.3"),
+            arrayOf<Any>("8.4"),
+            arrayOf<Any>("8.5"),
+            arrayOf<Any>("8.6"),
+            arrayOf<Any>("8.7"),
+            arrayOf<Any>("8.9"),
+            arrayOf<Any>("8.10.2"),
+            arrayOf<Any>("8.11.1"),
+            arrayOf<Any>("8.12.1"),
+            arrayOf<Any>("8.13"),
+            arrayOf<Any>("8.14.3"),
         )
     }
 
