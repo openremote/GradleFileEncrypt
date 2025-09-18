@@ -6,7 +6,7 @@ internal class EnvironmentPasswordProvider(
     private val providersFactory: ProviderFactory,
 ) : PasswordProvider {
     override val password: CharArray?
-        get() = providersFactory.environmentVariable(ENVIRONMENT_KEY).forUseAtConfigurationTime().orNull?.toCharArray()
+        get() = providersFactory.environmentVariable(ENVIRONMENT_KEY).orNull?.toCharArray()
 
     companion object {
         const val ENVIRONMENT_KEY = "GFE_PASSWORD"

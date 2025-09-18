@@ -6,7 +6,7 @@ internal class SystemPropertyPasswordProvider(
     private val providersFactory: ProviderFactory,
 ) : PasswordProvider {
     override val password: CharArray?
-        get() = providersFactory.systemProperty(SYSTEM_PROPERTY_KEY).forUseAtConfigurationTime().orNull?.toCharArray()
+        get() = providersFactory.systemProperty(SYSTEM_PROPERTY_KEY).orNull?.toCharArray()
 
     companion object {
         const val SYSTEM_PROPERTY_KEY = "GFE_PASSWORD"

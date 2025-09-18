@@ -15,7 +15,6 @@ internal class PropertiesPasswordProvider(
                 providers
                     .fileContents(layout.projectDirectory.file(LOCAL_PROPERTIES_FILE))
                     .asBytes
-                    .forUseAtConfigurationTime()
                     .orNull
             if (propertiesFile != null) {
                 Properties().apply {

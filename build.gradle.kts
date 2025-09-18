@@ -7,16 +7,16 @@ buildscript {
 }
 
 plugins {
-    kotlin("jvm") version "1.5.31"
+    kotlin("jvm") version "1.9.25"
     id("java-gradle-plugin")
     id("maven-publish")
-    id("com.github.ben-manes.versions") version "0.42.0"
-    id("io.gitlab.arturbosch.detekt") version "1.20.0"
-    id("com.gradle.plugin-publish") version "1.0.0-rc-1"
+    id("com.github.ben-manes.versions") version "0.51.0"
+    id("io.gitlab.arturbosch.detekt") version "1.23.8"
+    id("com.gradle.plugin-publish") version "2.0.0"
 }
 
-group = "com.cherryperry.gfe"
-version = "2.0.3"
+group = "io.openremote.com.cherryperry.gfe"
+version = "2.1.0"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8
@@ -26,7 +26,7 @@ java {
 tasks.withType<KotlinCompile> {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
-        apiVersion = "1.3"
+        apiVersion = "1.9"
     }
 }
 
@@ -36,18 +36,15 @@ detekt {
 }
 
 gradlePlugin {
-    plugins.register("gradleFileEncryptPlugin") {
-        id = "com.cherryperry.gradle-file-encrypt"
-        displayName = "Gradle file encrypt"
-        description = "Simply encrypt your sensitive data in repository with password"
-        implementationClass = "com.cherryperry.gfe.FileEncryptPlugin"
-    }
-}
-
-pluginBundle {
     website = "https://github.com/CherryPerry/GradleFileEncrypt"
     vcsUrl = "https://github.com/CherryPerry/GradleFileEncrypt.git"
-    tags = listOf("encryption", "cryptography")
+    plugins.register("gradleFileEncryptPlugin") {
+        id = "io.openremote.com.cherryperry.gradle-file-encrypt"
+        displayName = "Gradle file encrypt"
+        description = "Simply encrypt your sensitive data in repository with password"
+        tags = listOf("encryption", "cryptography")
+        implementationClass = "com.cherryperry.gfe.FileEncryptPlugin"
+    }
 }
 
 repositories {
@@ -59,5 +56,6 @@ dependencies {
     compileOnly(gradleApi())
     testImplementation("junit", "junit", "4.13.2")
     testImplementation(gradleTestKit())
-    detektPlugins("io.gitlab.arturbosch.detekt", "detekt-formatting", "1.20.0")
+    detektPlugins("io.gitlab.arturbosch.detekt", "detekt-formatting", "1.23.8")
+    detektPlugins("io.gitlab.arturbosch.detekt", "detekt-rules-libraries", "1.23.8")
 }

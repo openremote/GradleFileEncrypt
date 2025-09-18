@@ -43,6 +43,5 @@ internal fun FileEncryptExtension.secretKey(project: Project): Provider<SecretKe
     // Use lazy delegate to store contents of provider between provider.get invocations
     return project
         .providers
-        .provider { password }
-        .forUseAtConfigurationTime() as Provider<SecretKey>
+        .provider { password } as Provider<SecretKey>
 }
